@@ -1,0 +1,24 @@
+@import variables
+@import mixins
+
+ella-star-rating
+  margin: 2px 0
+
+  .star-rating
+    display: block
+    background:
+      image: $starimage
+      repeat: repeat-x
+      size: auto 200%
+    position: relative
+
+    .star-rating.star-rating-value
+      @include transition(width)
+      position: absolute
+      left: 0
+      height: 100%
+      -webkit-transform: none
+
+  &.disabled
+    > .star-rating
+      background-image: none
